@@ -274,22 +274,24 @@ Render Queueに設定する値について、より詳しく知りたい場合�
 | `Game Recommendation` | 様々なライティング環境が混在している、Game/VRChatのワールドのような環境において、カラーをなるべく破綻しないで楽しむのに便利な設定を一括でおこないます。Game/VRChat向けにセットアップをする場合、まずこちらから始めてみることをお薦めします。 |  |
 
 ---
-### 【参考】Game/VRChatユーザー向けの便利機能「Game Recommendation」ボタンについて
+### 【参考】Game/VRChatユーザー向けの便利機能「Game Recommendation」機能について
+
+<img width = "340" src="../images/GameRecommendation.png">
 
 <small>【**注意**】2020年5月の段階では、[VRChat](https://www.vrchat.com/)はUniversal Render PipelineやHDRPを採用してはいません。VRChat では Lagacy(Built-in)用のシェーダーを使うようにしてください。</small>  
 
 Unity Toon Shaderは、Unityの様々なプロジェクトで使うことのできる、汎用トゥーンシェーダーです。  
 同時に、トゥーンシェーダーは、元々はインテンシティ1程度のディレクショナルライトの元で使用するものですので、それ以外のシーンライティング環境下では適切なセッティングを必要とします。  
-「Game Recommendation」ボタンは、マテリアル単位で、それらの最適なセッティングをアドバイスします。  
+「Game Recommendation」は、マテリアル単位で、それらの最適なセッティングをアドバイスします。  
 特にVRChat上でUnity Toon Shaderの高機能を活かしつつ、VRChatの様々なライティング環境下でも安定して楽しむことができるようになります。  
 
 #### ● Unity Toon Shaderでマテリアル設定をはじめる時
-Unity Toon Shaderで各マテリアルの設定をはじめる時に、Basic Shader Settings > Option Menu内の`Game Recommendation`ボタンを実行してください。  
+Unity Toon Shaderで各マテリアルの設定をはじめる時に、Basic Shader Settings > Option Menu内の`Game Recommendation`を実行してください。  
 このコマンドを実行することで、Game/VRChatの様々なライティング環境にUnity Toon Shaderを馴染みやすくします。  
 VRChat上にアバターをアップロードして、どうも自分の意図した表示と違うと感じる時には、まず最初にこちらのコマンドを試してみるといいでしょう。  
 
 #### ● 暗いワールドでのキャラの見え方を明るくしたい場合
-`Game Recommendation`ボタンを実行した後で、主にポイントライトしかない暗いワールドでのキャラの見え方を、もっと明るめに調整したい場合があります。  
+`Game Recommendation`を実行した後で、主にポイントライトしかない暗いワールドでのキャラの見え方を、もっと明るめに調整したい場合があります。  
 その場合、「Environmental Lighting Contributions Setups」メニュー内の`Unlit Intensity`スライダーを調整することで、暗い場所での明るさを底上げすることができます。  
 
 <img width = "300" src="../images/Unlit_Intensity_Comp.gif">
@@ -300,7 +302,7 @@ VRChat上にアバターをアップロードして、どうも自分の意図�
 
 #### ● HDRPでのシーンセッティングにおいて、他のフォトメトリックライトと共にUnity Toon Shaderを使う場合
 HDRPで使用されるフォトメトリックなライトは、その多くがインテンシティの値が、従来のLegacy(Built-in)やURPよりも非常に高く設定されます。  
-そのようなHDRライト環境下でUnity Toon Shaderを使う場合、積極的に`Game Recommendation`ボタンによる最適な設定を利用すると、とても便利に使えます。  
+そのようなHDRライト環境下でUnity Toon Shaderを使う場合、積極的に`Game Recommendation`による最適な設定を利用すると、とても便利に使えます。  
 特にシーンビュー上でUnity Toon Shaderが白飛びをして表示されているような場合に、それらの白飛びを抑制し、各マテリアルのカラーを引き出すことができます。  
 
 ---

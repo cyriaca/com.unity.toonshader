@@ -279,23 +279,25 @@ In addition to selecting the two basic workflow modes, you can add a variety of 
 | `Game Recommendation` | Set up convenient settings for enjoying Game/VRChat, where various lighting environments are mixed together, all at once. When setting up for Game/VRChat, recommend you to start from this button first. |  |
 
 ---
-### 【Note】Game Remommendation Button : Useful functions for VRChat/Game users
+### 【Note】Game Remommendation feature : Useful functions for VRChat/Game users
+
+<img width = "340" src="../images/GameRecommendation.png">
 
 <small>【**Caution**】As of May 2020, [VRChat](https://www.vrchat.com/) is not adopting the universal render pipeline and HDRP. For the present, please use legacy(Built-in) shader.</small>  
 
 
 Unity Toon Shader is a general purpose toon shader that can be used in various projects in Unity.  
 At the same time, toon shaders are basically for use under directional light with an intensity value of about 1, so they need to be set up properly under other scene lighting environments.  
-The "Game Recommendation" button advises you on the best settings for each material of Unity Toon Shader.  
+The "Game Recommendation" feature advises you on the best settings for each material of Unity Toon Shader.  
 If you enjoy Unity Toon Shader on VRChat, you can use the following convenient functions to enjoy the stable features of VRChat in various environments while taking advantage of Unity Toon Shader's advanced features.  
 
 #### ● When setting up materials on Unity Toon Shader
-When you set up each material in Unity Toon Shader, please execute the `Game Recommendation` button in the Basic Shader Settings> Option Menu.  
+When you set up each material in Unity Toon Shader, please execute the `Game Recommendation` in the Basic Shader Settings> Option Menu.  
 By executing this command, Unity Toon Shader will become familiar with various VRChat lighting environments.  
 If you upload your avatar on VRChat and it feels different from what you intended, you should try this command first.  
 
 #### ● If you want to brighten the appearance of characters in dark worlds
-After executing the `Game Recommendation` button, you may want to adjust the appearance of the character in a dark world, which has only point lights, more brightly.  
+After executing the `Game Recommendation`, you may want to adjust the appearance of the character in a dark world, which has only point lights, more brightly.  
 In that case, you can raise the brightness in dark world by adjusting the `Unlit Intensity` slider in the "Environmental Lighting Contributions Setups" menu.  
 
 <img width = "300" src="../images/Unlit_Intensity_Comp.gif">
@@ -306,7 +308,7 @@ However, in a dark world, the post effect's bloom is often set to strong as well
 
 #### ● When using Unity Toon Shader with other photometric lights in HDRP scene setting
 Many of the photometric lights used in HDRP have intensity values set much higher than the traditional Legacy (built-in) and URP lights.  
-When using Unity Toon Shader in such HDR light environments, it is very useful to actively use the optimal settings via the `Game Recommendation` button.  
+When using Unity Toon Shader in such HDR light environments, it is very useful to actively use the optimal settings via the `Game Recommendation`.  
 In particular, if the Unity Toon Shader is displayed in the scene view with blown white, you can suppress those blown white phenomena and bring out the color of each material.  
 
 

@@ -48,11 +48,9 @@ Unity Toon Shaderでは、アクセントカラーとして**2影色とAp(対蹠
 
 ゲームシーンを美しいライティングで飾りたいならば、Unity Toon Shaderは非常に役に立ちます。  
 
-<!--
-<img width = "500" src="./Documentation~/images/VRChatUser00.png?raw=true">
--->
+<img width = "340" src="./Documentation~/images/GameRecommendation.png?raw=true">
 
-また昨今のVRChatでのユーザーの声を反映し、様々なライティング設定の環境下でも、キャラクターが美しく表現されるように様々な工夫が実装されています。  
+また昨今のVRChat/Gameでのユーザーの声を反映し、様々なライティング設定の環境下でも、キャラクターが美しく表現されるように様々な工夫が実装されています。  
 
 -----
 ## 【ユーザーマニュアル】

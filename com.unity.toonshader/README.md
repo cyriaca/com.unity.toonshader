@@ -48,11 +48,9 @@ Although there is a difference between Photo-realistic and Non-photo-realistic i
 
 Unity Toon Shader is very useful if you want to decorate your game scene with beautiful lightings.
 
-<!--
-<img width = "500" src="./Documentation~/images/VRChatUser00.png?raw=true">
--->
+<img width = "340" src="./Documentation~/images/GameRecommendation.png?raw=true">
 
-Finally, several techniques have been implemented to beautifully display characters in a variety of lighting environments, thanks to recent feedback from VRChat users.  
+Finally, several techniques have been implemented to beautifully display characters in a variety of lighting environments, thanks to recent feedback from VRChat/Game users.  
 
 ## 【Installing Unity Toon Shader】
 To install this package, follow the instructions in the [Package Manager documentation](https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html). 
