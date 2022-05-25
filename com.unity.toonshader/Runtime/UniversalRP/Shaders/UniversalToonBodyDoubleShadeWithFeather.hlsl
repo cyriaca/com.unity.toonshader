@@ -391,6 +391,9 @@
 #elif _IS_CLIPPING_TRANSMODE
 //DoubleShadeWithFeather_TransClipping
                 float Set_Opacity = SATURATE_IF_SDR((_Inverse_Clipping_var+_Tweak_transparency));
+#if _IS_DITHER_YES
+                clip(dither(i.pos.xy, Set_Opacity));
+#endif
                 fixed4 finalRGBA = fixed4(finalColor,Set_Opacity);
 
 #endif

@@ -2,6 +2,11 @@
 //nobuyuki@unity3d.com
 //toshiyuki@unity3d.com (Universal RP/HDRP) 
 
+#if defined(_IS_DITHER_YES)
+
+#include "UniversalToonDither.hlsl"
+
+#endif
 
             uniform float4 _LightColor0; // this is not set in c# code ?
 
@@ -95,6 +100,10 @@
                 float Set_MainTexAlpha = _MainTex_var.a;
                 float _IsBaseMapAlphaAsClippingMask_var = lerp( _ClippingMask_var.r, Set_MainTexAlpha, _IsBaseMapAlphaAsClippingMask );
                 float _Inverse_Clipping_var = lerp( _IsBaseMapAlphaAsClippingMask_var, (1.0 - _IsBaseMapAlphaAsClippingMask_var), _Inverse_Clipping );
+#if _IS_DITHER_YES
+                float Set_Opacity = SATURATE_IF_SDR((_Inverse_Clipping_var+_Tweak_transparency));
+                clip(dither(i.pos.xy, Set_Opacity));
+#endif
                 float Set_Clipping = saturate((_Inverse_Clipping_var+_Clipping_Level));
                 clip(Set_Clipping - 0.5);
                 float4 Set_Outline_Color = lerp( float4(_Is_BlendBaseColor_var,Set_Clipping), float4((_OutlineTex_var.rgb*_Outline_Color.rgb*lightColor),Set_Clipping), _Is_OutlineTex );

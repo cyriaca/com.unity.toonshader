@@ -430,6 +430,12 @@
 
 
 
+#if defined(_IS_DITHER_YES)
+
+#include "UniversalToonDither.hlsl"
+
+#endif
+
 #if defined(_SHADINGGRADEMAP)
 
 #include "UniversalToonBodyShadingGradeMap.hlsl"

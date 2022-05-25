@@ -241,6 +241,7 @@ Shader "Universal Render Pipeline/Toon" {
             //V.2.0.4
             #pragma multi_compile _IS_OUTLINE_CLIPPING_NO _IS_OUTLINE_CLIPPING_YES
             #pragma multi_compile _OUTLINE_NML _OUTLINE_POS
+            #pragma multi_compile _ _IS_DITHER_YES
             // Outline is implemented in UniversalToonOutline.hlsl.
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
@@ -318,6 +319,8 @@ Shader "Universal Render Pipeline/Toon" {
             #pragma shader_feature _ _SHADINGGRADEMAP
 
 
+            // used in dithering
+            #pragma multi_compile _ _IS_DITHER_YES
             // used in ShadingGradeMap
             #pragma shader_feature _IS_TRANSCLIPPING_OFF _IS_TRANSCLIPPING_ON
             #pragma shader_feature _IS_ANGELRING_OFF _IS_ANGELRING_ON
