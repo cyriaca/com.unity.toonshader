@@ -108,6 +108,39 @@ float3 DecodeLightProbe(float3 N) {
     return ShadeSH9(float4(N, 1));
 }
 
+float3 EvaluateEnvLight(FragInputs input, PositionInputs posInput, SurfaceData surfaceData, BuiltinData builtinData) {
+    // In cases other than when APV can be used, use the existing bakeDiffuseLighting value
+#if defined(LIGHTMAP_ON) || defined(DYNAMICLIGHTMAP_ON)
+    return builtinData.bakeDiffuseLighting;
+#elif (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2))
+    // recompute value using APV, because GetSurfaceAndBuiltinData doesn't enable APV evaluation (needToIncludeAPV) in SampleBakedGI call
+    float3 doubleSidedConstants = GetDoubleSidedConstants();
+
+    ApplyDoubleSidedFlipOrMirror(input, doubleSidedConstants); // Apply double sided flip on the vertex normal
+
+    float3 bentNormalWS;
+    // Use bent normal to sample GI if available
+#ifdef _BENTNORMALMAP
+    LayerTexCoord layerTexCoord;
+    ZERO_INITIALIZE(LayerTexCoord, layerTexCoord);
+    GetLayerTexCoord(input, layerTexCoord);
+    float3 normalTS;
+    float3 bentNormalTS;
+    // LitDataIndividualLayer.hlsl:GetSurfaceData via LitData.hlsl (single defined layer) to evaluate bentNormalTS
+    SurfaceData surfaceDataUnused;
+    float alpha = GetSurfaceData(input, layerTexCoord, surfaceDataUnused, normalTS, bentNormalTS);
+    GetNormalWS(input, bentNormalTS, bentNormalWS, doubleSidedConstants);
+#else
+    bentNormalWS = surfaceData.normalWS;
+#endif
+    float3 bakeDiffuseLighting;
+    float3 backBakeDiffuseLighting;
+    EvaluateAdaptiveProbeVolume(GetAbsolutePositionWS(posInput.positionWS), bentNormalWS, -input.tangentToWorld[2], GetWorldSpaceNormalizeViewDir(posInput.positionWS), 0.0, bakeDiffuseLighting, backBakeDiffuseLighting);
+    return bakeDiffuseLighting;
+#else
+    return builtinData.bakeDiffuseLighting;
+#endif
+}
 
 inline float GammaToLinearSpaceExact(float value)
 {
